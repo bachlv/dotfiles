@@ -1,6 +1,3 @@
-[submodule "/Users/bach/.config/nvim"]
-	path = /Users/bach/.config/nvim
-	url = https://github.com/bachlv/init.lua
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/bachlv/init.lua
