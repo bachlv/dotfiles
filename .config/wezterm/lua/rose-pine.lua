@@ -45,9 +45,9 @@ function M.colors()
 		ansi = {
 			palette.overlay,
 			palette.love,
-			palette.pine,
-			palette.gold,
 			palette.foam,
+			palette.gold,
+			palette.pine,
 			palette.iris,
 			palette.rose,
 			palette.text,
@@ -56,9 +56,9 @@ function M.colors()
 		brights = {
 			palette.muted,
 			palette.love,
-			palette.pine,
-			palette.gold,
 			palette.foam,
+			palette.gold,
+			palette.pine,
 			palette.iris,
 			palette.rose,
 			palette.text,
