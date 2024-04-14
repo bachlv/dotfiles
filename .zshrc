@@ -5,15 +5,20 @@ setopt histignoredups
 export EDITOR="nvim"
 export VISUAL="nvim"
 alias vim="nvim"
+alias rls=$(which ls)
+alias ls="$(which eza) --icons"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --pointer=""
+ --prompt=""
+ --color=fg:#524f67,bg:-1,hl:#31748f
+ --color=fg+:-1,bg+:#26233a,hl+:#9ccfd8
+ --color=info:#524f67,prompt:#eb6f92,pointer:#eb6f92
+ --color=marker:#9ccfd8,spinner:#ebbcba,header:#87afaf,border:#524f67,gutter:-1'
 
 eval "$(fnm env --use-on-cd)"
-
 eval "$(starship init zsh)"
-
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-
-
 eval "$(zoxide init zsh)"
 
 
@@ -30,8 +35,20 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light marlonrichert/zsh-autocomplete
+
+# https://zdharma-continuum.github.io/zinit/wiki/Example-Minimal-Setup/
+zinit wait lucid for \
+atinit"zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-accept;" \
+    zsh-users/zsh-autosuggestions \
+    Aloxaf/fzf-tab \
+    zdharma-continuum/history-search-multi-word \
+blockf atpull'zinit creinstall -q .' \
+    zsh-users/zsh-completions
+
+zstyle ":history-search-multi-word" highlight-color "bg=8,bold"
+
 
 # zprof
 
