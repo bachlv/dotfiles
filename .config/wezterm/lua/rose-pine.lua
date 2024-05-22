@@ -8,6 +8,7 @@ local M = {}
 
 local palette = {
 	base = "#191724",
+	surface = "#1f1d2e",
 	overlay = "#26233a",
 	muted = "#6e6a86",
 	text = "#e0def4",
@@ -20,6 +21,7 @@ local palette = {
 	highlight_low = "21202e",
 	highlight_med = "#403d52",
 	highlight_high = "#524f67",
+	subtle = "#908caa",
 }
 
 local active_tab = {
@@ -41,6 +43,11 @@ function M.colors()
 		cursor_fg = palette.text,
 		selection_bg = palette.highlight_med,
 		-- selection_fg = palette.text,
+
+		surface = palette.surface,
+		text = palette.text,
+		overlay = palette.overlay,
+		subtle = palette.subtle,
 
 		ansi = {
 			palette.overlay,
