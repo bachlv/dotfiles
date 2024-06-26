@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local colors = require("lua/rose-pine").colors()
+local palette = require("lua/rose-pine").palette()
 
 local config = {
 	colors = colors,
@@ -43,8 +44,8 @@ local config = {
 	window_frame = {
 		font = wezterm.font("SF Mono"),
 	},
-	command_palette_bg_color = colors.surface,
-	command_palette_fg_color = colors.subtle,
+	command_palette_bg_color = palette.surface,
+	command_palette_fg_color = palette.subtle,
 	use_fancy_tab_bar = false,
 	hide_tab_bar_if_only_one_tab = true,
 	native_macos_fullscreen_mode = false,

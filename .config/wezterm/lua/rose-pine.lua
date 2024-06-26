@@ -24,6 +24,10 @@ local palette = {
 	subtle = "#908caa",
 }
 
+function M.palette()
+	return palette
+end
+
 local active_tab = {
 	bg_color = palette.overlay,
 	fg_color = palette.text,
@@ -43,11 +47,6 @@ function M.colors()
 		cursor_fg = palette.text,
 		selection_bg = palette.highlight_med,
 		-- selection_fg = palette.text,
-
-		surface = palette.surface,
-		text = palette.text,
-		overlay = palette.overlay,
-		subtle = palette.subtle,
 
 		ansi = {
 			palette.overlay,

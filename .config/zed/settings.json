@@ -8,7 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "theme": "Rosé Pine",
-  "vim_mode": true,
+  "vim_mode": false,
   "ui_font_size": 13,
   "buffer_font_size": 13,
   "ui_font_family": "SF Mono Powerline",
