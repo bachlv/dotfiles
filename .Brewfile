@@ -1,4 +1,5 @@
 brew "bat"
+brew "btop"
 brew "ddgr"
 brew "eza"
 brew "fnm"
