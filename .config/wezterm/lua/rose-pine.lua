@@ -18,7 +18,7 @@ local palette = {
 	pine = "#31748f",
 	foam = "#9ccfd8",
 	iris = "#c4a7e7",
-	highlight_low = "21202e",
+	highlight_low = "#21202e",
 	highlight_med = "#403d52",
 	highlight_high = "#524f67",
 	subtle = "#908caa",
@@ -42,9 +42,9 @@ function M.colors()
 	return {
 		foreground = palette.text,
 		background = palette.base,
-		cursor_bg = palette.highlight_high,
-		cursor_border = palette.highlight_high,
-		cursor_fg = palette.text,
+		cursor_bg = palette.subtle,
+		cursor_border = palette.text,
+		cursor_fg = palette.base,
 		selection_bg = palette.highlight_med,
 		-- selection_fg = palette.text,
 

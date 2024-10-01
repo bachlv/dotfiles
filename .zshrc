@@ -17,10 +17,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 eval "$(zoxide init zsh)"
 
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$(go env GOPATH)/bin:$PATH"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
