@@ -20,10 +20,11 @@ brew "zoxide"
 brew "zsh"
 cask "cloudflare-warp"
 cask "iina"
-cask "keycastr"
 cask "font-symbols-only-nerd-font"
-cask "proxyman"
 cask "font-sf-mono"
+cask "keycastr"
+cask "manico"
+cask "proxyman"
 cask "wezterm"
 mas "Amphetamine", id: 937984704
 mas "djay", id: 450527929
