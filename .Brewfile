@@ -27,6 +27,5 @@ cask "manico"
 cask "proxyman"
 cask "wezterm"
 mas "Amphetamine", id: 937984704
-mas "djay", id: 450527929
-mas "HotKey", id: 975890633
-mas "NextDNS", id: 1464122853
+mas "Hidden Bar", id: 1452453066
+mas "Windows App", id: 1295203466

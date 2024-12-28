@@ -13,6 +13,7 @@ $kubernetes\
 $directory\
 $vcsh\
 ${custom.giturl}\
+$time\
 $all\
 """
 

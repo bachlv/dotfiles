@@ -19,7 +19,11 @@ eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-export PATH="/opt/homebrew/opt/make/libexec/gnubin:$(go env GOPATH)/bin:$PATH"
+# export PATH="/opt/homebrew/opt/make/libexec/gnubin:$(go env GOPATH)/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -52,3 +56,5 @@ zstyle ":history-search-multi-word" highlight-color "bg=8,bold"
 # zprof
 
 
+
+export PATH="$PATH:$HOME/.local/bin"
