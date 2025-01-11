@@ -61,7 +61,7 @@ zinit ice wait lucid atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-acc
 zinit light zsh-users/zsh-autosuggestions
 zstyle ":history-search-multi-word" highlight-color "bg=0,bold"
 zinit ice wait"1" lucid
-zinit load zdharma-continuum/history-search-multi-word
+zinit load atuinsh/atuin
 
 # zprof
 
