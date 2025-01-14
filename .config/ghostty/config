@@ -3,6 +3,7 @@ font-family = "Geist Mono"
 font-feature = -liga
 
 macos-non-native-fullscreen = true
+macos-option-as-alt = true
 confirm-close-surface = false
 
 keybind = cmd+t=text:\x02\x63

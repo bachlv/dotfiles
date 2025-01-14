@@ -4,6 +4,8 @@ setopt histignoredups
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+export GPG_TTY=$(tty)
+
 alias vim="nvim"
 alias rls=$(which ls)
 alias ls="$(which eza) --icons=auto"
@@ -23,7 +25,11 @@ export FZF_DEFAULT_OPTS="
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+bindkey -v
 # export PATH="/opt/homebrew/opt/make/libexec/gnubin:$(go env GOPATH)/bin:$PATH"
 
 ### Added by Zinit's installer
@@ -59,9 +65,6 @@ zinit ice wait"1" lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait lucid atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-accept"
 zinit light zsh-users/zsh-autosuggestions
-zstyle ":history-search-multi-word" highlight-color "bg=0,bold"
-zinit ice wait"1" lucid
-zinit load atuinsh/atuin
 
 # zprof
 
@@ -102,3 +105,6 @@ if command -v tmux >/dev/null 2>&1 && [[ ! -n $TMUX ]]; then
     :
   fi
 fi
+
+
+. "$HOME/.local/bin/env"
