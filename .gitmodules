@@ -4,3 +4,9 @@
 [submodule "/Users/bach/.config/tmux/.tmux"]
 	path = /Users/bach/.config/tmux/.tmux
 	url = https://github.com/gpakosz/.tmux
+[submodule "/Users/bach/.config/tmux/tmux-resurrect"]
+	path = /Users/bach/.config/tmux/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "/Users/bach/.config/tmux/tmux-continuum"]
+	path = /Users/bach/.config/tmux/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
