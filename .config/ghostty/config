@@ -7,16 +7,16 @@ macos-non-native-fullscreen = true
 macos-option-as-alt = true
 confirm-close-surface = false
 
-keybind = cmd+t=text:\x02\x63
-keybind = cmd+w=text:\x02&
+keybind = cmd+t=text:\x01\x63
+keybind = cmd+w=text:\x01&
 
-keybind = cmd+one=text:\x021
-keybind = cmd+two=text:\x022
-keybind = cmd+three=text:\x023
-keybind = cmd+four=text:\x024
-keybind = cmd+five=text:\x025
-keybind = cmd+six=text:\x026
-keybind = cmd+seven=text:\x027
-keybind = cmd+eight=text:\x028
-keybind = cmd+nine=text:\x029
+keybind = cmd+one=text:\x011
+keybind = cmd+two=text:\x012
+keybind = cmd+three=text:\x013
+keybind = cmd+four=text:\x014
+keybind = cmd+five=text:\x015
+keybind = cmd+six=text:\x016
+keybind = cmd+seven=text:\x017
+keybind = cmd+eight=text:\x018
+keybind = cmd+nine=text:\x019
 

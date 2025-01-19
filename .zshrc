@@ -14,7 +14,7 @@ export FZF_DEFAULT_OPTS="
   --walker-skip .git,node_modules,target
   --preview '[[ -d {} ]] && eza -1 --icons=always --color=always --no-quotes {} || bat --plain --color=always {}'
   --preview-window hidden
-  --bind 'ctrl-/:change-preview-window(right|hidden),ctrl-y:preview-up,ctrl-e:preview-down'
+  --bind 'ctrl-/:change-preview-window(right|hidden),ctrl-b:preview-up,ctrl-f:preview-down'
   --pointer='' --prompt=' '
   --ansi
   --color=fg:#524f67,bg:-1,hl:#31748f
