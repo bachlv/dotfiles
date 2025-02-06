@@ -1,12 +1,12 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/bachlv/init.lua.git
-[submodule "/Users/bach/.config/tmux/.tmux"]
-	path = /Users/bach/.config/tmux/.tmux
-	url = https://github.com/gpakosz/.tmux
-[submodule "/Users/bach/.config/tmux/tmux-resurrect"]
-	path = /Users/bach/.config/tmux/tmux-resurrect
+[submodule ".config/tmux/.tmux"]
+	path = .config/tmux/.tmux
+	url = https://github.com/gpakosz/.tmux.git
+[submodule ".config/tmux/tmux-resurrect"]
+	path = .config/tmux/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
-[submodule "/Users/bach/.config/tmux/tmux-continuum"]
-	path = /Users/bach/.config/tmux/tmux-continuum
+[submodule ".config/tmux/tmux-continuum"]
+	path = .config/tmux/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
