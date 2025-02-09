@@ -14,20 +14,18 @@ export FZF_DEFAULT_OPTS="
   --walker-skip .git,node_modules,target
   --preview '[[ -d {} ]] && eza -1 --icons=always --color=always --no-quotes {} || bat --plain --color=always {}'
   --preview-window hidden
-  --bind 'ctrl-/:change-preview-window(right|hidden),ctrl-b:preview-up,ctrl-f:preview-down'
+  --bind 'ctrl-/:change-preview-window(right|hidden),ctrl-b:preview-up,ctrl-f:preview-down,ctrl-u:half-page-up,ctrl-d:half-page-down'
   --pointer='' --prompt=' '
   --ansi
   --color=fg:#524f67,bg:-1,hl:#31748f
   --color=fg+:-1,bg+:#26233a,hl+:#9ccfd8
   --color=info:#524f67,prompt:#eb6f92,pointer:#eb6f92
   --color=marker:#9ccfd8,spinner:#ebbcba,header:#87afaf,border:#524f67,gutter:-1
-  --height 50% --tmux 65%,65% --layout reverse"
-
+  --height 50% --tmux 65%,70% --layout reverse"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
-
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
