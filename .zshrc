@@ -5,6 +5,7 @@ bindkey -v
 export EDITOR="nvim"
 export VISUAL="nvim"
 export GPG_TTY=$(tty)
+export XDG_CONFIG_HOME="$HOME/.config"
 
 alias vim="nvim"
 alias rls=$(which ls)
