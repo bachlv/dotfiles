@@ -73,3 +73,11 @@ zinit ice wait lucid atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-acc
 zinit light zsh-users/zsh-autosuggestions
 
 # zprof
+
+# pnpm
+export PNPM_HOME="/Users/bach/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
