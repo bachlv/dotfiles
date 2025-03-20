@@ -1,32 +1,5 @@
 #!/bin/zsh
 
-# Start the tmux session if not already in the tmux session
-
-# Get the session IDs and names
-session_list="$(tmux list-sessions -F '#{session_name}: #{session_windows} window(s), created: #{t:session_created}')"
-
-# Create new session if no sessions exist
-if [[ -z "$session_list" ]]; then
-  read "session_name?Enter session name (default: main): "
-  session_name=${session_name:-main}
-  tmux new-session -s "$session_name"
-fi
-
-# Select from following choices
-create_new_session="Create new session"
-start_without_tmux="Start without tmux"
-choices="$session_list\n${create_new_session}:\n${start_without_tmux}:"
-choice="$(echo $choices | fzf | cut -d: -f1)"
-
-if [[ -n "$(tmux list-sessions -F '#{session_name}' | grep -x "$choice")" ]]; then
-  # Attach existing session
-  tmux attach-session -t "$choice"
-elif [[ "$choice" = "${create_new_session}" ]]; then
-  # Create new session with custom name
-  read "session_name?Enter session name (default: main): "
-  session_name=${session_name:-main}
-  tmux new-session -s "$session_name"
-elif [[ "$choice" = "${start_without_tmux}" ]]; then
-  # Start without tmux
-  :
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach-session || echo "No previous Tmux session found."
 fi
