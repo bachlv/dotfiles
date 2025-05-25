@@ -1,11 +1,14 @@
 # zmodload zsh/zprof
 setopt histignoredups
 bindkey -v
+bindkey -M viins '^H' backward-delete-char
+bindkey -M viins '^?' backward-delete-char
 
 export EDITOR="nvim"
 export VISUAL="nvim"
 export GPG_TTY=$(tty)
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 alias vim="nvim"
 alias rls=$(which ls)
@@ -82,3 +85,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
