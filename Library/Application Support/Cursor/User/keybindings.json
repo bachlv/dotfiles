@@ -1,0 +1,37 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.files.save",
+                "extension.vim_escape"
+            ]
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+l",
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+;",
+        "command": "vim.showQuickpickCmdLine",
+        "when": "editorTextFocus && vim.mode != 'Insert'"
+    }
+]
