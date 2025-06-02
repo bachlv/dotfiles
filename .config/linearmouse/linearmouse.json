@@ -1,0 +1,28 @@
+{
+  "schemes" : [
+    {
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      },
+      "if" : {
+        "device" : {
+          "vendorID" : "0x46d",
+          "productID" : "0xb024",
+          "productName" : "G604 LIGHTSPEED",
+          "serialNumber" : "3F9081B1C48879B5",
+          "category" : "mouse"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 1.2,
+        "disableAcceleration" : true
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+}
