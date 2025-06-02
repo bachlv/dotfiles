@@ -34,7 +34,7 @@ export FZF_DEFAULT_OPTS="
 # Starship, Zoxide, Atuin
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
 
 # Pyenv, fnm, Go
 export PYENV_ROOT="$HOME/.pyenv"
@@ -42,6 +42,9 @@ path_add "$PYENV_ROOT/bin"
 command -v pyenv >/dev/null && eval "$(pyenv init -)"
 command -v fnm >/dev/null && eval "$(fnm env --use-on-cd)"
 command -v go &>/dev/null && path_add "$(go env GOPATH)/bin"
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
 
 # Zinit bootstrap
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -74,11 +77,13 @@ zinit light zsh-users/zsh-autosuggestions
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
 
-# Keybindings
-bindkey '^x^e' edit-command-line
-bindkey '^P' history-beginning-search-backward
-bindkey '^N' history-beginning-search-forward
-bindkey '^R' atuin-search
+# All keybindings after zsh-vi-mode
+function zvm_after_init() {
+  bindkey '^x^e' edit-command-line
+  bindkey '^P' history-beginning-search-backward
+  bindkey '^N' history-beginning-search-forward
+  bindkey '^R' atuin-search
+}
 
 # FZF-tab styles
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
