@@ -1,19 +1,22 @@
-# zmodload zsh/zprof
 setopt histignoredups
-bindkey -v
-bindkey -M viins '^H' backward-delete-char
-bindkey -M viins '^?' backward-delete-char
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty 2>/dev/null)"
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
+# PATH management
+path_add() { [[ -d $1 ]] && [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"; }
+path_add "$HOME/.local/bin"
+path_add "$HOME/.pyenv/bin"
+path_add "/Users/bach/Library/pnpm"
+
+# Aliases
 alias vim="nvim"
-alias rls=$(which ls)
-alias ls="$(which eza) --icons=auto"
+alias rls="ls"
+alias ls="eza --icons=auto"
 
+# FZF config
 export FZF_DEFAULT_OPTS="
   --walker-skip .git,node_modules,target
   --preview '[[ -d {} ]] && eza -1 --icons=always --color=always --no-quotes {} || bat --plain --color=always {}'
@@ -25,22 +28,22 @@ export FZF_DEFAULT_OPTS="
   --color=fg+:-1,bg+:#26233a,hl+:#9ccfd8
   --color=info:#524f67,prompt:#eb6f92,pointer:#eb6f92
   --color=marker:#9ccfd8,spinner:#ebbcba,header:#87afaf,border:#524f67,gutter:-1
-  --height 50% --tmux 65%,70% --layout reverse"
+  --height 50% --tmux 65%,70% --layout reverse
+"
 
+# Starship, Zoxide, Atuin
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
 
+# Pyenv, fnm, Go
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
-command -v fnm >/dev/null 2>&1 && eval "$(fnm env --use-on-cd)"
-command -v go &> /dev/null && export PATH="/opt/homebrew/opt/make/libexec/gnubin:$(go env GOPATH)/bin:$PATH"
+path_add "$PYENV_ROOT/bin"
+command -v pyenv >/dev/null && eval "$(pyenv init -)"
+command -v fnm >/dev/null && eval "$(fnm env --use-on-cd)"
+command -v go &>/dev/null && path_add "$(go env GOPATH)/bin"
 
-# Add .local/bin to PATH
-. "$HOME/.local/bin/env"
-
-### Added by Zinit's installer 
+# Zinit bootstrap
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -48,41 +51,36 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
-
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-###
 
-# Zinit config
+# Plugins
 zinit ice wait lucid blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
 
-autoload compinit
-compinit
+autoload -Uz compinit
+compinit -C
 
-bindkey '^P' history-beginning-search-backward
-bindkey '^N' history-beginning-search-forward
-
-zstyle ':fzf-tab:*' use-fzf-default-opts yes
-zstyle ':fzf-tab:*' fzf-flags --tmux "65%,65%"
-zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --icons=always --color=always --no-quotes "$realpath" || bat --plain --color=always "$realpath"'
 zinit ice wait"1" lucid
 zinit light Aloxaf/fzf-tab
 
 zinit ice wait"1" lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
+
 zinit ice wait lucid atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-accept;"
 zinit light zsh-users/zsh-autosuggestions
 
-# zprof
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
-# pnpm
-export PNPM_HOME="/Users/bach/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# Keybindings
+bindkey '^x^e' edit-command-line
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+bindkey '^R' atuin-search
 
+# FZF-tab styles
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+zstyle ':fzf-tab:*' fzf-flags --tmux "65%,65%"
+zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --icons=always --color=always --no-quotes "$realpath" || bat --plain --color=always "$realpath"'
