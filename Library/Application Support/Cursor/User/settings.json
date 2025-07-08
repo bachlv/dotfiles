@@ -78,6 +78,7 @@
         }
     ],
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.fontFamily": "\"Geist Mono\", Menlo, Monaco, Consolas, 'Courier New', monospace",
-    "editor.fontSize": 12.5
+    "editor.fontFamily": "\"Geist Mono\", Menlo, Monaco, Consolas, 'Courier New', \"Symbols Nerd Font\", monospace",
+    "editor.fontSize": 12.5,
+    "git.autofetch": true
 }
