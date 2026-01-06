@@ -1,18 +1,15 @@
 lastupdatecheck: 0
 recentrepos:
     - /Users/bach
-    - /Users/bach/.config/nvim
-    - /Users/bach/Developer/deepseed
+    - /Users/bach/Developer/seed-apps-openmrs
     - /Users/bach/Developer/codelink.io
+    - /Users/bach/.config/nvim
+    - /Users/bach/Developer/homebridge-camera-ffmpeg
+    - /Users/bach/Developer/seed
+    - /Users/bach/Developer/deepseed
 startuppopupversion: 5
-lastversion: 0.45.2
+didshowhunkstaginghint: false
+lastversion: 0.57.0
 customcommandshistory:
     - q
 hidecommandlog: false
-ignorewhitespaceindiffview: false
-diffcontextsize: 3
-renamesimilaritythreshold: 50
-localbranchsortorder: recency
-remotebranchsortorder: alphabetical
-gitlogorder: topo-order
-gitlogshowgraph: always

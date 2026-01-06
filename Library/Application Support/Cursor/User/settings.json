@@ -1,84 +1,55 @@
 {
-    "window.commandCenter": true,
-    "editor.formatOnSave": true,
-    "vim.leader": " ",
-    "vim.highlightedyank.enable": true,
-    "vim.useSystemClipboard": true,
-    "vim.smartRelativeLine": true,
-    "vim.normalModeKeyBindings": [],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "<leader>",
-                "b",
-                "d"
-            ],
-            "commands": [
-                "workbench.action.closeActiveEditor"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "b",
-                "b"
-            ],
-            "commands": [
-                "workbench.action.navigateBack",
-            ]
-        },
-        {
-            "before": [
-                "[",
-                "e"
-            ],
-            "commands": [
-                "editor.action.marker.prev",
-                "closeMarkersNavigation"
-            ],
-        },
-        {
-            "before": [
-                "]",
-                "e"
-            ],
-            "commands": [
-                "editor.action.marker.next",
-                "closeMarkersNavigation"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-                "f"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "<leader>",
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "c",
-                "r"
-            ],
-            "commands": [
-                "editor.action.rename"
-            ]
-        }
-    ],
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.fontFamily": "\"Geist Mono\", Menlo, Monaco, Consolas, 'Courier New', \"Symbols Nerd Font\", monospace",
-    "editor.fontSize": 12.5,
-    "git.autofetch": true
+  "window.commandCenter": true,
+  "vim.leader": " ",
+  "vim.highlightedyank.enable": true,
+  "vim.useSystemClipboard": true,
+  "vim.smartRelativeLine": true,
+  "vim.normalModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "b", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "b"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prev", "closeMarkersNavigation"]
+    },
+    {
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.next", "closeMarkersNavigation"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "<leader>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    }
+  ],
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.fontFamily": "\"Geist Mono\", Menlo, Monaco, Consolas, 'Courier New', \"Symbols Nerd Font\", monospace",
+  "editor.fontSize": 12.5,
+  "git.autofetch": true,
+  "diffEditor.maxComputationTime": 0,
+  "git.openRepositoryInParentFolders": "never",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "workbench.editor.enablePreview": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
