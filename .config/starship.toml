@@ -13,8 +13,16 @@ $kubernetes\
 $directory\
 $vcsh\
 ${custom.giturl}\
+$git_branch\
+$git_status\
+$python\
+$fill\
+$cmd_duration\
 $time\
 $all\
+"""
+
+right_format = """
 """
 
 # Replace the '❯' symbol in the prompt with '➜'
@@ -54,3 +62,9 @@ echo "$GIT_REMOTE_SYMBOL "
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 format = "on [($output )]($style)"
 style = "bold purple"
+
+[time]
+disabled = false
+
+[fill]
+symbol = ' '

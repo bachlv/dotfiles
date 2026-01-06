@@ -89,3 +89,16 @@ function zvm_after_init() {
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:*' fzf-flags --tmux "65%,65%"
 zstyle ':fzf-tab:complete:*' fzf-preview '[[ -d $realpath ]] && eza -1 --icons=always --color=always --no-quotes "$realpath" || bat --plain --color=always "$realpath"'
+
+# bun completions
+[ -s "/Users/bach/.bun/_bun" ] && source "/Users/bach/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/bach/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/bach/.antigravity/antigravity/bin:$PATH"

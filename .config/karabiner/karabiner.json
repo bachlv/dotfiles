@@ -5,43 +5,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Lock both machines",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    { "shell_command": "killall -HUP UniversalControl; osascript -e 'tell application \"System Events\" to keystroke \"q\" using {control down, command down}'" },
-                                    {
-                                        "key_code": "q",
-                                        "modifiers": ["left_command", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Restart Universal Control",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [{ "shell_command": "killall -HUP UniversalControl" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Change double tap right ⇧ key to caps lock",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -111,70 +75,20 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Move mouse with hyper + u/d",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "software_function": {
-                                            "set_mouse_cursor_position": {
-                                                "screen": 0,
-                                                "x": 0,
-                                                "y": 0
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "lazy": true,
-                                        "mouse_key": {
-                                            "speed_multiplier": 10.0,
-                                            "y": -1500
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    { "pointing_button": "button8" },
-                                    { "key_code": "f20" }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": ["command", "control", "option", "shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f20",
-                                        "modifiers": ["shift"]
-                                    },
-                                    {
-                                        "mouse_key": {
-                                            "speed_multiplier": 10.0,
-                                            "x": 100,
-                                            "y": 1500
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [{ "pointing_button": "button8" }],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 16403,
+                        "vendor_id": 12625
+                    },
+                    "ignore": false
+                }
+            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
