@@ -1,15 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
     - /Users/bach
-    - /Users/bach/Developer/seed-apps-openmrs
+    - /Users/bach/Developer/cl-career
     - /Users/bach/Developer/codelink.io
     - /Users/bach/.config/nvim
-    - /Users/bach/Developer/homebridge-camera-ffmpeg
     - /Users/bach/Developer/seed
-    - /Users/bach/Developer/deepseed
 startuppopupversion: 5
 didshowhunkstaginghint: false
-lastversion: 0.57.0
+lastversion: 0.60.0
 customcommandshistory:
     - q
 hidecommandlog: false
