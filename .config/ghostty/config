@@ -1,9 +1,9 @@
-theme = "rose-pine"
+theme = "rose-pine-moon"
 font-family = "Geist Mono"
 adjust-cell-width = -4%
 font-feature = -liga
 
-macos-non-native-fullscreen = true
+macos-non-native-fullscreen = visible-menu
 macos-option-as-alt = true
 
 confirm-close-surface = false
@@ -20,3 +20,8 @@ keybind = super+digit_6=text:\x016
 keybind = super+digit_7=text:\x017
 keybind = super+digit_8=text:\x018
 keybind = super+digit_9=text:\x019
+
+background-opacity = 0.5
+background-blur = macos-glass-regular
+background = #000000
+window-decoration = auto
