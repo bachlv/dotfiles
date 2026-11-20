@@ -7,6 +7,10 @@ cd "$HOME"
 echo "Init submodules"
 yadm submodule update --recursive --init
 
+echo "Link agent skills"
+mkdir -p "$HOME/.claude/skills"
+ln -sfn "$HOME/.agents/skills/terminal-screenshot" "$HOME/.claude/skills/terminal-screenshot"
+
 system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
